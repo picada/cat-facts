@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import Display from './components/Display'
+import { trackPromise } from 'react-promise-tracker'
 
-function App() {
+
+const baseUrl = 'https://cat-fact.herokuapp.com/facts'
+
+const App = () => {
+  const [facts, setFacts] = useState([]) 
+
+  const fetchFive = () => {
+    trackPromise(
+    axios
+      .get(baseUrl+'/random?animal_type=cat&amount=5') 
+      .then(response => {
+        setFacts(response.data)
+      })
+      .catch(error => {
+        console.log(error)
+      }))
+  }
+  
+  useEffect(() => {
+    fetchFive()
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Display content={facts} 
+        handleClick={fetchFive}  
+        buttonText='Moar, pls' 
+        baseUrl={baseUrl}
+      />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
+
