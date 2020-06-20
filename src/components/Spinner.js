@@ -6,7 +6,9 @@ const Spinner = (props) => {
     const { promiseInProgress } = usePromiseTracker()
     return (
       promiseInProgress &&
-      <Loader type="Circles" color="black" height="100" width="100" />
+      <div style={{padding:'5rem'}}>
+      <Loader type="Circles" color="orange" height="200" width="200" />
+      </div>
     )
   }  
 
