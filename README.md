@@ -1,4 +1,6 @@
-A simple frontend React application created with create-react-app. Fetches random cat facts from an open API  [https://alexwohlbruck.github.io/cat-facts/docs/](https://alexwohlbruck.github.io/cat-facts/docs/)
+## Random Cat Facts
+
+A simple frontend React application created with create-react-app. Fetches random cat facts (five at a time) from an open API  [https://alexwohlbruck.github.io/cat-facts/docs/](https://alexwohlbruck.github.io/cat-facts/docs/)
 
 The app is also running at [https://random-catfacts.herokuapp.com](https://random-catfacts.herokuapp.com)
 
