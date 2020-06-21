@@ -30,8 +30,9 @@ const App = () => {
   }, [])
 
   return (
-    <div>
-      <Display content={facts} 
+    <div >
+      <Display 
+        content={facts} 
         handleClick={fetchFacts}  
         baseUrl={baseUrl}
         message={errorMessage}
