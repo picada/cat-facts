@@ -12,11 +12,11 @@ import Cat from '../images/cat.png'
 const Display = ({content, handleClick, message, baseUrl}) => {
   return (
     <Container fluid className='p-5' > 
-      <Row>
+      <Row style={{maxWidth: '95rem'}}>
         <Col xs={12} md={9} style={{backgroundColor:'lightyellow', padding:'5rem'}} className='rounded border boder-secondary'>
           <Notification message={message}/>
           <Row><h1> Did you know that...</h1></Row>
-          <Row style={{ minHeight: '29rem', padding:'1rem' }}>
+          <Row style={{minHeight: '35rem'}} className='py-5'>
             <Spinner/>
             <FactBox facts={content} baseUrl={baseUrl} />
           </Row>
